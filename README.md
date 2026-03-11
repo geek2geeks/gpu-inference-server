@@ -1,7 +1,8 @@
 # GPU-Accelerated AI Server Infrastructure
 
-## 🚀 Overview
-Enterprise-grade AI infrastructure leveraging RTX 3090 (24GB VRAM) for distributed computing, designed for high-performance AI applications.
+**Status:** Active Development | **Domain:** AI Infrastructure, MLOps, Computer Vision
+
+Enterprise-grade AI infrastructure leveraging NVIDIA RTX 3090 (24GB VRAM) for distributed computing, designed specifically for high-performance AI, Computer Vision, and Language Processing applications.
 
 ![GPU Metrics](https://img.shields.io/badge/GPU-RTX%203090-brightgreen)
 ![CUDA](https://img.shields.io/badge/CUDA-12.3.1-blue)
@@ -9,6 +10,9 @@ Enterprise-grade AI infrastructure leveraging RTX 3090 (24GB VRAM) for distribut
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-development-orange)
+
+## 🚀 Overview
+An end-to-end framework enabling seamless deployment of heavily parallelized Machine Learning models. Built from the ground up to solve the challenges of GPU resource management, request queuing, and real-time monitoring, this server provides a robust API gateway for high-throughput AI services (e.g., real-time image processing, inference pipelines).
 
 ## 🏗 Architecture
 
@@ -77,22 +81,20 @@ sequenceDiagram
 ## 💻 Core Components
 
 ### AI Server
-- FastAPI-based REST API
-- Real-time GPU resource management
-- Task queue and scheduling
-- Automatic memory optimization
+- FastAPI-based REST API for asynchronous, non-blocking inference.
+- Real-time GPU resource management (VRAM allocation, state tracking).
+- Task queueing and dynamic scheduling for concurrent model execution.
+- Automatic memory optimization (cache clearing, batch sizing).
 
-### Monitoring
-- Real-time GPU metrics
-- System resource tracking
-- Task performance analytics
-- Alert system
+### Monitoring & Telemetry
+- Exposes real-time GPU metrics to Prometheus/Grafana.
+- System resource tracking for proactive bottleneck detection.
+- Task performance analytics (latency, throughput, TFLOPS).
 
-### Security
-- Cloudflare SSL/TLS
-- Rate limiting
-- Authentication system
-- Network isolation
+### Security & Gateway
+- Cloudflare SSL/TLS for secure ingress.
+- Rate limiting and API authentication.
+- Network isolation using Docker-compose.
 
 ## 📊 Performance Metrics
 
@@ -133,8 +135,8 @@ Python >= 3.10
 ### Installation
 ```bash
 # Clone and setup
-git clone https://github.com/geek2geeks/justica.git
-cd justica
+git clone https://github.com/geek2geeks/gpu-inference-server.git
+cd gpu-inference-server
 
 # Create environment
 conda create -n pytorch_gpu python=3.10
@@ -220,18 +222,6 @@ python -m pytest tests/unit/test_gpu.py
 2. Video Processing Pipeline
 3. Custom ML Model Support
 4. Advanced Monitoring
-
-## 📞 Support
-
-### Contact
-- **Developer**: Pedro Rodrigues
-- **Email**: ukpedropt@hotmail.com
-- **GitHub**: [@geek2geeks](https://github.com/geek2geeks)
-
-### Contributing
-1. Fork the repository
-2. Create feature branch
-3. Submit pull request
 
 ## 📄 License
 MIT License - see [LICENSE.md](LICENSE.md)
