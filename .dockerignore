@@ -4,6 +4,15 @@
 .git
 .gitignore
 
+# Environment / secrets (never bake credentials into the image)
+.env*
+config/secrets.json
+config/services/nginx/.htpasswd
+
+# Generated artifacts
+documentation_*.md
+docs/validation/
+
 # Python
 __pycache__
 *.pyc

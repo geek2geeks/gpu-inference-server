@@ -70,8 +70,18 @@ logs/
 prometheus/data/
 grafana/data/
 
-# Documentation
+# Local secrets (never commit)
+.env.backup
+.env_secrets
+config/secrets.json
+config/services/nginx/.htpasswd
+config/services/nginx/certs/
+
+# Generated artifacts
 code_documentation_*.md
+documentation_*.md
+docs/validation/*.json
+docs/environment/
 
 # Windows specific
 Thumbs.db
